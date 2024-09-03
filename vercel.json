@@ -1,0 +1,32 @@
+{
+	"version": 2,
+	"name": "next-simple-starter",
+	"routes": [
+		{
+			"src": "^/service-worker.js$",
+			"dest": "/_next/static/service-worker.js",
+			"headers": {
+				"cache-control": "public, max-age=43200, immutable",
+				"Service-Worker-Allowed": "/"
+			}
+		}
+	],
+	"headers": [
+		{
+			"source": "/api/(.*)",
+			"headers": [
+				{ "key": "Access-Control-Allow-Credentials", "value": "true" },
+				{ "key": "Access-Control-Allow-Origin", "value": "*" },
+				{
+					"key": "Access-Control-Allow-Methods",
+					"value": "GET,DELETE,PATCH,POST,PUT"
+				},
+				{
+					"key": "Access-Control-Allow-Headers",
+					"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+				}
+			]
+		}
+	],
+	"builds": [{ "src": "package.json", "use": "@vercel/next" }]
+}

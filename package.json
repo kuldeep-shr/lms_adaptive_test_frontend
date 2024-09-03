@@ -1,0 +1,55 @@
+{
+	"name": "next-simple-starter",
+	"private": true,
+	"version": "3.0.0",
+	"repository": {
+		"url": "https://github.com/ooade/NextSimpleStarter"
+	},
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"license": "MIT",
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"scripts": {
+		"dev": "next dev -p 3600",
+		"start": "next start",
+		"lint": "eslint components",
+		"build": "next build",
+		"build:server": "NEXT_TARGET=server next build",
+		"export:server": "NEXT_TARGET=server next export",
+		"export": "npm run build:server && npm run export:server",
+		"start:static": "serve",
+		"now-build": "next build"
+	},
+	"dependencies": {
+		"@emotion/cache": "^11.13.1",
+		"@emotion/react": "^11.13.3",
+		"@emotion/styled": "^11.13.0",
+		"@material-ui/core": "^4.11.2",
+		"@mui/icons-material": "^6.0.1",
+		"@mui/material": "^6.0.1",
+		"@mui/material-nextjs": "^6.0.1",
+		"@mui/styles": "^5.14.9",
+		"@mui/types": "^7.2.16",
+		"axios": "^1.7.7",
+		"jwt-decode": "^4.0.0",
+		"next": "^14.1.4",
+		"next-pwa": "^5.6.0",
+		"react": "^18.2.0",
+		"react-axe": "^3.5.4",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.26.0",
+		"eslint-config-react-app": "^6.0.0",
+		"eslint-plugin-import": "^2.23.1",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-react": "^7.23.2",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"typescript": "5.5.4"
+	},
+	"proxy": "http://localhost:8080"
+}
